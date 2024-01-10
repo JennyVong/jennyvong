@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import * as RoutesConst from "./constants/Routes";
+import { ChakraProvider } from "@chakra-ui/react";
+import "@fontsource/pt-serif/700.css";
+import "@fontsource/pt-serif/400.css";
 
-function App() {
+import Home from "./components/pages/Home";
+
+import customTheme from "./theme";
+
+const App = (): React.ReactElement => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider theme={customTheme}>
+      <BrowserRouter>
+        <Routes>
+          <Route path={RoutesConst.HOME} Component={Home} />
+        </Routes>
+      </BrowserRouter>
+    </ChakraProvider>
   );
-}
+};
 
 export default App;

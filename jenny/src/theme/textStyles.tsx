@@ -23,6 +23,12 @@ const textStyles = {
     fontSize: "1rem",
     lineHeight: "150%",
   },
+  "body-bold": {
+    fontFamily: "PT Serif",
+    fontWeight: "700",
+    fontSize: "1rem",
+    lineHeight: "150%",
+  },
 };
 
 export default textStyles;

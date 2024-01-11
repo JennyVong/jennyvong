@@ -15,12 +15,12 @@ const JobTile = ({
   image,
 }: JobTileProps): React.ReactElement => {
   return (
-    <Box>
+    <Box maxW="2xl">
       <Flex alignItems="center">
         <Text color="gray.50" textStyle="body-regular">
           {year}
         </Text>
-        <Image paddingTop="15px" boxSize="100px" src={image} alt="logo" />
+        <Image paddingTop="15px" boxSize="80px" src={image} alt="logo" />
         <Box>
           <Text textStyle="title-small">{company}</Text>
           <Text textStyle="body-regular">{desc}</Text>

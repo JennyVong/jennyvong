@@ -7,13 +7,13 @@ const textStyles = {
   },
   "title-medium": {
     fontFamily: "PT Serif",
-    fontWeight: "400",
+    fontWeight: "700",
     fontSize: "1.5rem",
     lineHeight: "125%",
   },
   "title-small": {
     fontFamily: "PT Serif",
-    fontWeight: "400",
+    fontWeight: "700",
     fontSize: "1.125rem",
     lineHeight: "150%",
   },

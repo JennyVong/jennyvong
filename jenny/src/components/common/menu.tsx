@@ -5,29 +5,35 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 const Menu = (): React.ReactElement => {
   return (
     <Container
+      position="sticky"
+      top="0"
       color="white"
       height="100vh"
       maxW="sm"
       backgroundColor="purple.400"
+      margin="0"
+      marginRight="60px"
     >
       <Flex
         marginLeft="60px"
-        marginRight="80px"
+        paddingRight="10%"
         flexDirection="column"
         alignItems="start"
       >
-        <Flex marginTop="100px" marginBottom="80px" flexDirection="column">
-          <Text textStyle="title-medium">Hi, I'm Jenny :D</Text>
+        <Flex marginTop="120px" marginBottom="80px" flexDirection="column">
+          <Text marginBottom="10px" textStyle="title-large">
+            Hi, I'm Jenny :D
+          </Text>
           <Text textStyle="body-regular">
             I’m a software engineer passionate about breaking down boundaries
             and making technology more accessible.
           </Text>
         </Flex>
         <Flex flexDirection="column">
-          <Text textStyle="body-regular" id="about">
+          <Text marginBottom="10px" textStyle="body-regular" id="about">
             about
           </Text>
-          <Text textStyle="body-regular" id="about">
+          <Text marginBottom="10px" textStyle="body-regular" id="about">
             works
           </Text>
           <Link href="https://chakra-ui.com" isExternal>

@@ -2,10 +2,14 @@ import React from "react";
 import { Flex, Text, Image, Grid, GridItem } from "@chakra-ui/react";
 
 import JobTile from "../common/JobTile";
+import ProjectTile from "../common/ProjectTile";
 import Line from "../common/Line";
 
 import Self from "../../assets/self1.png";
 import Self1 from "../../assets/seelf.png";
+import Spacestagram from "../../assets/space.png";
+import Mario from "../../assets/mario.png";
+import Sketchy from "../../assets/sketchy.svg";
 
 const Home = (): React.ReactElement => {
   return (
@@ -155,7 +159,49 @@ const Home = (): React.ReactElement => {
           marginTop="100px"
           templateColumns={{ base: "1", lg: "repeat(3, 1fr)" }}
           gap={6}
-        ></Grid>
+        >
+          <GridItem
+            area={"Text"}
+            colSpan={1}
+            maxW="150px"
+            textStyle="title-medium"
+            display="flex"
+            justifySelf="center"
+          >
+            WORKS
+          </GridItem>
+          <GridItem area={"Flex"} colSpan={2} flexDirection="column">
+            <ProjectTile
+              title="Spacestagram"
+              type="Personal Project"
+              desc="Fusion of Instagram and Pinterest web app to display NASA Rover photos through NASA API"
+              techs="Angular (Typescript)"
+              link="jennyvong.github.io/spacestagram/"
+              glink="https://github.com/JennyVong/spacestagram"
+              img={Spacestagram}
+              altText="spacestagram"
+            />
+            <ProjectTile
+              title="MarioPlan"
+              type="Personal Project"
+              desc="Blog web application to post and view blog posts with user auth system"
+              techs="React (JavaScript), Redux, Firebase"
+              link="https://jv-marioplan.web.app/signup"
+              glink="https://github.com/JennyVong/React-Redux-Firebase-App"
+              img={Mario}
+              altText="marioplan"
+            />
+            <ProjectTile
+              title="Sketchy"
+              type="Hack the North, 2021"
+              desc="Google Chrome Extension to write notes on notepad while browsing the web to study"
+              techs="Javascript, HTML, CSS"
+              glink="https://github.com/terryluan12/Sketchy"
+              img={Sketchy}
+              altText="sketchy"
+            />
+          </GridItem>
+        </Grid>
       </Flex>
     </Flex>
   );

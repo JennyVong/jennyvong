@@ -1,35 +1,45 @@
 import React from "react";
-import { Box, Flex, Text, Image } from "@chakra-ui/react";
+import { Flex, Text, Grid } from "@chakra-ui/react";
 
 export type JobTileProps = {
   year: string;
   company: string;
+  position: string;
   desc: string;
-  image: string;
-  size: string;
 };
 
 const JobTile = ({
   year,
   company,
+  position,
   desc,
-  image,
-  size,
 }: JobTileProps): React.ReactElement => {
-  const bs = size + "px";
   return (
-    <Box marginBottom="50px">
-      <Flex alignItems="center">
-        <Text marginRight="20px" color="gray.50" textStyle="body-regular">
+    <Grid templateColumns={{ base: "1", lg: "repeat(2, 1fr)" }}>
+      <Flex
+        marginBottom={{ base: "10px", md: "20px", lg: "130px" }}
+        alignItems="center"
+        flexDirection="column"
+      >
+        <Flex>
+          <Text textStyle="title-small">{position} &nbsp;- &nbsp;</Text>
+          <Text textStyle="title-small" color="purple.400">
+            {company}
+          </Text>
+        </Flex>
+        <Text alignSelf="center" textStyle="body-regular">
           {year}
         </Text>
-        <Image marginTop="5px" boxSize={bs} src={image} alt="logo" />
-        <Box marginLeft="30px">
-          <Text textStyle="title-small">{company}</Text>
-          <Text textStyle="body-regular">{desc}</Text>
-        </Box>
       </Flex>
-    </Box>
+      <Text
+        display="flex"
+        justifySelf="center"
+        maxW={{ base: "200px", md: "300px" }}
+        textStyle="body-regular"
+      >
+        {desc}
+      </Text>
+    </Grid>
   );
 };
 

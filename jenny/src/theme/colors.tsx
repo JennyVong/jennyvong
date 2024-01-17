@@ -1,6 +1,6 @@
 const colors = {
   black: {
-    default: "#000000",
+    default: "#060312",
   },
   white: {
     default: "#FFFFFF",
@@ -9,7 +9,7 @@ const colors = {
     50: "#635E5E",
   },
   purple: {
-    400: "#4B3F72",
+    400: "#6042E0",
   },
   background: "#F3EFE9",
 };

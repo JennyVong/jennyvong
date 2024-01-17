@@ -8,13 +8,13 @@ const customTheme = extendTheme({
     global: {
       "html, body": {
         font: textStyles["body-regular"],
-        background: colors["background"],
+        bg: "#060312",
       },
     },
   },
   config: {
     useSystemColorMode: false,
-    initialColorMode: "light",
+    initialColorMode: "Dark",
   },
   fonts: {
     heading: `'PT Serif', sans-serif`,

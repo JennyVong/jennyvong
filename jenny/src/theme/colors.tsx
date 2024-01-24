@@ -1,5 +1,6 @@
 const colors = {
   black: {
+    50: "#060312",
     default: "#060312",
   },
   white: {

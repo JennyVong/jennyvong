@@ -26,7 +26,7 @@ const ProjectTile = ({
 }: ProjectTileProps): React.ReactElement => {
   return (
     <Grid
-      marginBottom={{ base: "10px", md: "20px", lg: "130px" }}
+      marginBottom="130px"
       templateColumns={{ base: "1", lg: "repeat(2, 1fr)" }}
     >
       <Image src={img} alt={altText} />

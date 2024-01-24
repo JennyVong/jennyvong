@@ -1,11 +1,12 @@
 import React from "react";
-import { Flex, Text, Grid } from "@chakra-ui/react";
+import { Flex, Text, Grid, Link } from "@chakra-ui/react";
 
 export type JobTileProps = {
   year: string;
   company: string;
   position: string;
   desc: string;
+  link: string;
 };
 
 const JobTile = ({
@@ -13,28 +14,41 @@ const JobTile = ({
   company,
   position,
   desc,
+  link,
 }: JobTileProps): React.ReactElement => {
   return (
-    <Grid templateColumns={{ base: "1", lg: "repeat(2, 1fr)" }}>
+    <Grid
+      marginBottom={{ base: "50px", lg: "0px" }}
+      templateColumns={{ base: "repeat(1, 1fr)", lg: "repeat(2, 1fr)" }}
+    >
       <Flex
         marginBottom={{ base: "10px", md: "20px", lg: "130px" }}
-        alignItems="center"
+        alignItems={{ base: "start", lg: "center" }}
         flexDirection="column"
       >
         <Flex>
           <Text textStyle="title-small">{position} &nbsp;- &nbsp;</Text>
-          <Text textStyle="title-small" color="purple.400">
+          <Link
+            cursor="pointer"
+            textStyle="title-small"
+            color="purple.400"
+            href={link}
+            isExternal
+          >
             {company}
-          </Text>
+          </Link>
         </Flex>
-        <Text alignSelf="center" textStyle="body-regular">
+        <Text
+          alignSelf={{ base: "start", lg: "center" }}
+          textStyle="body-regular"
+        >
           {year}
         </Text>
       </Flex>
       <Text
         display="flex"
-        justifySelf="center"
-        maxW={{ base: "200px", md: "300px" }}
+        justifySelf={{ base: "start", lg: "center" }}
+        maxW={{ base: "300px", md: "420px", lg: "300px" }}
         textStyle="body-regular"
       >
         {desc}

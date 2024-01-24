@@ -37,9 +37,39 @@ const textStyles = {
   "body-bold": {
     fontFamily: "PT Serif",
     fontWeight: "700",
-    fontSize: "1rem",
+    fontSize: "0.875rem",
     lineHeight: "150%",
     color: "white",
+  },
+  "body-regular-base": {
+    fontFamily: "PT Serif",
+    fontWeight: "400",
+    fontSize: "0.75rem",
+    lineHeight: "150%",
+    color: "white",
+  },
+  "body-bold-base": {
+    fontFamily: "PT Serif",
+    fontWeight: "700",
+    fontSize: "0.75rem",
+    lineHeight: "150%",
+    color: "white",
+  },
+  "nav-selected": {
+    fontFamily: "PT Serif",
+    fontWeight: "700",
+    fontSize: "1rem",
+    lineHeight: "150%",
+    color: "purple.400",
+    textDecoration: "underline",
+  },
+  "nav-selected-base": {
+    fontFamily: "PT Serif",
+    fontWeight: "700",
+    fontSize: "0.75rem",
+    lineHeight: "150%",
+    color: "purple.400",
+    textDecoration: "underline",
   },
 };
 

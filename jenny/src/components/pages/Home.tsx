@@ -1,31 +1,74 @@
-import React from "react";
-import { Flex, Text, Image, Grid, GridItem } from "@chakra-ui/react";
+import React, { useRef } from "react";
+import { Flex, Text, Image, Grid, GridItem, Link } from "@chakra-ui/react";
 
 import JobTile from "../common/JobTile";
 import ProjectTile from "../common/ProjectTile";
 import Line from "../common/Line";
+import NavBar from "../menu/NavBar";
+import MenuBar from "../menu/MenuBar";
 
 import Self from "../../assets/self1.png";
 import Self1 from "../../assets/seelf.png";
 import Spacestagram from "../../assets/space.png";
 import Mario from "../../assets/mario.png";
 import Sketchy from "../../assets/sketchy.svg";
+import Footer from "../common/Footer";
 
 const Home = (): React.ReactElement => {
+  const aboutRef = useRef<null | HTMLDivElement>(null);
+  const experienceRef = useRef<null | HTMLDivElement>(null);
+  const contactRef = useRef<null | HTMLDivElement>(null);
+  const projectRef = useRef<null | HTMLDivElement>(null);
+  const aboutScroll = () => {
+    if (aboutRef?.current) {
+      aboutRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const experienceScroll = () => {
+    if (experienceRef?.current) {
+      experienceRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const projectScroll = () => {
+    if (projectRef?.current) {
+      projectRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const contactScroll = () => {
+    if (contactRef?.current) {
+      contactRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
-    <Flex margin="125px">
-      <Flex flexDirection="column">
+    <Flex flexDirection="column">
+      <Flex top="2" right="2" position="fixed">
+        <MenuBar
+          aboutScrollCallback={aboutScroll}
+          experienceScrollCallback={experienceScroll}
+          projectScrollCallback={projectScroll}
+          contactScrollCallback={contactScroll}
+        />
+      </Flex>
+      <NavBar
+        aboutScrollCallback={aboutScroll}
+        experienceScrollCallback={experienceScroll}
+        projectScrollCallback={projectScroll}
+        contactScrollCallback={contactScroll}
+      />
+      <Flex margin={{ base: "50px", lg: "125px" }} flexDirection="column">
         <Flex
-          paddingRight="150px"
-          paddingLeft="150px"
-          marginTop="60px"
+          paddingRight={{ base: "0", md: "80px", lg: "150px" }}
+          paddingLeft={{ base: "0", md: "80px", lg: "150px" }}
           marginBottom="100px"
           justifyContent="flex-end"
+          flexDirection={{ base: "column", lg: "row" }}
         >
           <Image
-            marginRight="80px"
+            marginRight={{ base: "0px", lg: "80px" }}
+            marginBottom={{ base: "50px", lg: "0" }}
             borderRadius="full"
-            height="300px"
+            boxSize={{ base: "180px", lg: "300px" }}
+            alignSelf={{ base: "center" }}
             src={Self}
             alt="Jenny Vong"
           />
@@ -37,34 +80,42 @@ const Home = (): React.ReactElement => {
             </Text>
             <Text
               display="inline-block"
-              paddingRight="210px"
+              paddingRight={{ base: "0px", md: "0", lg: "210px" }}
               textStyle="body-regular"
             >
               I’m a software engineer passionate about breaking down boundaries
               and making technology more accessible. Currently supporting EC2
               systems @{" "}
-              <Text
+              <Link
+                cursor="pointer"
                 display="inline-block"
-                textDecoration="underline"
                 textStyle="body-bold"
                 color="purple.400"
+                href="https://aws.amazon.com/ec2/"
+                isExternal
               >
                 AWS
-              </Text>
+              </Link>
             </Text>
           </Flex>
         </Flex>
 
-        <Line />
-
+        <div id="about">
+          <Line refs={aboutRef} />
+        </div>
         <Flex
+          flexDirection={{ base: "column", lg: "row" }}
           marginTop="100px"
           marginBottom="100px"
           alignItems="center"
-          paddingRight="50px"
-          paddingLeft="50px"
+          paddingRight={{ base: "10px", md: "50px", lg: "50px" }}
+          paddingLeft={{ base: "10px", md: "50px", lg: "50px" }}
         >
-          <Flex marginRight="150px" flexDirection="column">
+          <Flex
+            marginRight={{ base: "0px", lg: "150px" }}
+            flexDirection="column"
+            alignSelf={{ base: "center" }}
+          >
             <Text textStyle="body-regular" marginBottom="30px">
               I'm Jenny, an aspiring Software Developer from Toronto, Canada.
               I'm currently a fourth year student studying Mathematics at the
@@ -79,28 +130,102 @@ const Home = (): React.ReactElement => {
               attempting to cook new recipes I see on tiktok!
             </Text>
             <Text textStyle="body-regular">
-              Feel free to reach out for a chat at jenny.vong@uwaterloo.ca! :)
+              Feel free to reach out for a chat at{" "}
+              <Link
+                cursor="pointer"
+                textStyle="body-regular"
+                color="purple.400"
+                display="inline-block"
+                href="mailto:jenny.vong@uwaterloo.ca"
+                isExternal
+              >
+                jenny.vong@uwaterloo.ca
+              </Link>{" "}
+              :)
             </Text>
           </Flex>
           <Image
-            marginLeft="50px"
+            marginTop={{ base: "50px", lg: "0px" }}
+            marginLeft={{ base: "0px", lg: "50px" }}
             boxSize="350px"
             src={Self1}
             alt="Jenny Vong"
           />
         </Flex>
 
-        <Line />
+        <div id="experience">
+          <Line refs={experienceRef} />
+        </div>
+
+        <Flex
+          marginBottom="80px"
+          alignSelf="center"
+          display={{ lg: "none" }}
+          flexDirection="column"
+        >
+          <Text marginTop="100px" marginBottom="50px" textStyle="title-medium">
+            Professional Experience
+          </Text>
+          <JobTile
+            year="May 2023 - Present"
+            company="UW Blueprint"
+            position="Fullstack Developer"
+            desc="Collaborated with 8 developers to build an optimized case man-
+              agement application for Children’s Aid Society using React and Flask"
+            link="https://uwblueprint.org/"
+          />
+          <JobTile
+            year="Jan 2023 - Apr 2023"
+            company="Amazon Web Services"
+            position="Software Development Engineer"
+            desc="Collaborated with 8 developers to build an optimized case man-
+              agement application for Children’s Aid Society using React and Flask"
+            link="https://aws.amazon.com/ec2/"
+          />
+          <JobTile
+            year="May 2022 - Aug 2022"
+            company="Kaleidescape"
+            position="Software Engineer"
+            desc="Collaborated with 8 developers to build an optimized case man-
+              agement application for Children’s Aid Society using React and Flask"
+            link="https://www.kaleidescape.com/"
+          />
+          <JobTile
+            year="Sep 2021 - Dec 2021"
+            company="Cubic Health"
+            position="Software Engineer"
+            desc="Collaborated with 8 developers to build an optimized case man-
+              agement application for Children’s Aid Society using React and Flask"
+            link="https://cubic.ca/"
+          />
+          <JobTile
+            year="Jan 2021 - Aug 2021"
+            company="Hack the 6ix"
+            position="Fullstack Developer"
+            desc="Collaborated with 8 developers to build an optimized case man-
+              agement application for Children’s Aid Society using React and Flask"
+            link="https://hackthe6ix.com/"
+          />
+          <JobTile
+            year="Jan 2021 - Apr 2021"
+            company="Gore Mutual Insurance"
+            position="Frontend Developer"
+            desc="Collaborated with 8 developers to build an optimized case man-
+              agement application for Children’s Aid Society using React and Flask"
+            link="https://www.goremutual.ca/"
+          />
+        </Flex>
 
         <Grid
+          display={{ base: "none", lg: "grid" }}
           marginTop="100px"
-          templateColumns={{ base: "1", lg: "repeat(3, 1fr)" }}
+          templateColumns={{ md: "repeat(3, 1fr)" }}
           gap={6}
         >
           <GridItem
             area={"Text"}
             colSpan={1}
-            maxW="150px"
+            maxW="180px"
             textStyle="title-medium"
             display="flex"
             justifySelf="center"
@@ -114,6 +239,7 @@ const Home = (): React.ReactElement => {
               position="Fullstack Developer"
               desc="Collaborated with 8 developers to build an optimized case man-
               agement application for Children’s Aid Society using React and Flask"
+              link="https://uwblueprint.org/"
             />
             <JobTile
               year="Jan 2023 - Apr 2023"
@@ -121,6 +247,7 @@ const Home = (): React.ReactElement => {
               position="Software Development Engineer"
               desc="Collaborated with 8 developers to build an optimized case man-
               agement application for Children’s Aid Society using React and Flask"
+              link="https://aws.amazon.com/ec2/"
             />
             <JobTile
               year="May 2022 - Aug 2022"
@@ -128,6 +255,7 @@ const Home = (): React.ReactElement => {
               position="Software Engineer"
               desc="Collaborated with 8 developers to build an optimized case man-
               agement application for Children’s Aid Society using React and Flask"
+              link="https://www.kaleidescape.com/"
             />
             <JobTile
               year="Sep 2021 - Dec 2021"
@@ -135,6 +263,7 @@ const Home = (): React.ReactElement => {
               position="Software Engineer"
               desc="Collaborated with 8 developers to build an optimized case man-
               agement application for Children’s Aid Society using React and Flask"
+              link="https://cubic.ca/"
             />
             <JobTile
               year="Jan 2021 - Aug 2021"
@@ -142,6 +271,7 @@ const Home = (): React.ReactElement => {
               position="Fullstack Developer"
               desc="Collaborated with 8 developers to build an optimized case man-
               agement application for Children’s Aid Society using React and Flask"
+              link="https://hackthe6ix.com/"
             />
             <JobTile
               year="Jan 2021 - Apr 2021"
@@ -149,26 +279,70 @@ const Home = (): React.ReactElement => {
               position="Frontend Developer"
               desc="Collaborated with 8 developers to build an optimized case man-
               agement application for Children’s Aid Society using React and Flask"
+              link="https://www.goremutual.ca/"
             />
           </GridItem>
         </Grid>
 
-        <Line />
+        <div id="works">
+          <Line refs={projectRef} />
+        </div>
+
+        <Flex
+          marginBottom="80px"
+          alignSelf="center"
+          display={{ lg: "none" }}
+          flexDirection="column"
+        >
+          <Text marginTop="100px" marginBottom="50px" textStyle="title-medium">
+            More Works
+          </Text>
+          <ProjectTile
+            title="Spacestagram"
+            type="Personal Project"
+            desc="Fusion of Instagram and Pinterest web app to display NASA Rover photos through NASA API"
+            techs="Angular (Typescript)"
+            link="jennyvong.github.io/spacestagram/"
+            glink="https://github.com/JennyVong/spacestagram"
+            img={Spacestagram}
+            altText="spacestagram"
+          />
+          <ProjectTile
+            title="MarioPlan"
+            type="Personal Project"
+            desc="Blog web application to post and view blog posts with user auth system"
+            techs="React (JavaScript), Redux, Firebase"
+            link="https://jv-marioplan.web.app/signup"
+            glink="https://github.com/JennyVong/React-Redux-Firebase-App"
+            img={Mario}
+            altText="marioplan"
+          />
+          <ProjectTile
+            title="Sketchy"
+            type="Hack the North, 2021"
+            desc="Google Chrome Extension to write notes on notepad while browsing the web to study"
+            techs="Javascript, HTML, CSS"
+            glink="https://github.com/terryluan12/Sketchy"
+            img={Sketchy}
+            altText="sketchy"
+          />
+        </Flex>
 
         <Grid
+          display={{ base: "none", lg: "grid" }}
           marginTop="100px"
-          templateColumns={{ base: "1", lg: "repeat(3, 1fr)" }}
+          templateColumns={{ md: "repeat(3, 1fr)" }}
           gap={6}
         >
           <GridItem
             area={"Text"}
+            maxW="180px"
             colSpan={1}
-            maxW="150px"
             textStyle="title-medium"
             display="flex"
             justifySelf="center"
           >
-            WORKS
+            MORE PROJECTS
           </GridItem>
           <GridItem area={"Flex"} colSpan={2} flexDirection="column">
             <ProjectTile
@@ -202,6 +376,12 @@ const Home = (): React.ReactElement => {
             />
           </GridItem>
         </Grid>
+
+        <div id="contact">
+          <Line refs={contactRef} />
+        </div>
+
+        <Footer />
       </Flex>
     </Flex>
   );

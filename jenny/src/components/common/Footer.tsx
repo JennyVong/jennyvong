@@ -57,7 +57,7 @@ const Footer = (): React.ReactElement => {
           textStyle="body-bold"
           color="purple.400"
           display="inline-block"
-          href="#"
+          href="https://drive.google.com/file/d/1QVMyhfaH1UW0FaUKYO_OXty96IaSylZb/view?usp=drive_link"
           isExternal
         >
           Resume

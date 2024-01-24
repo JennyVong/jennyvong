@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 import { Flex, Text, Image, Grid, GridItem, Link } from "@chakra-ui/react";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
 import JobTile from "../common/JobTile";
 import ProjectTile from "../common/ProjectTile";
@@ -7,18 +9,24 @@ import Line from "../common/Line";
 import NavBar from "../menu/NavBar";
 import MenuBar from "../menu/MenuBar";
 
-import Self from "../../assets/self1.png";
-import Self1 from "../../assets/seelf.png";
+import Self from "../../assets/portrait-round.png";
 import Spacestagram from "../../assets/space.png";
 import Mario from "../../assets/mario.png";
 import Sketchy from "../../assets/sketchy.svg";
 import Footer from "../common/Footer";
+import Bujo from "../../assets/bujo.png";
+import Udon from "../../assets/udon.png";
+import Friends from "../../assets/friends.png";
+import Mom from "../../assets/mom.png";
+import Pottery from "../../assets/pottery.png";
+import Sister from "../../assets/sister.png";
 
 const Home = (): React.ReactElement => {
   const aboutRef = useRef<null | HTMLDivElement>(null);
   const experienceRef = useRef<null | HTMLDivElement>(null);
   const contactRef = useRef<null | HTMLDivElement>(null);
   const projectRef = useRef<null | HTMLDivElement>(null);
+
   const aboutScroll = () => {
     if (aboutRef?.current) {
       aboutRef.current.scrollIntoView({ behavior: "smooth" });
@@ -66,6 +74,7 @@ const Home = (): React.ReactElement => {
           <Image
             marginRight={{ base: "0px", lg: "80px" }}
             marginBottom={{ base: "50px", lg: "0" }}
+            style={{ borderColor: "purple.400" }}
             borderRadius="full"
             boxSize={{ base: "180px", lg: "300px" }}
             alignSelf={{ base: "center" }}
@@ -113,16 +122,18 @@ const Home = (): React.ReactElement => {
         >
           <Flex
             marginRight={{ base: "0px", lg: "150px" }}
+            marginBottom={{ base: "100px", lg: "0px" }}
             flexDirection="column"
             alignSelf={{ base: "center" }}
           >
             <Text textStyle="body-regular" marginBottom="30px">
               I'm Jenny, an aspiring Software Developer from Toronto, Canada.
-              I'm currently a fourth year student studying Mathematics at the
-              University of Waterloo. As an aspiring developer with a
-              Mathematical background in Statistics, I've found ways to apply
-              development strategies to a variety of problem spaces and take
-              ownership in various projects and software development processes.
+              I'm currently a fourth year student studying Statistics & Computer
+              Science at the University of Waterloo. As an aspiring developer
+              with a Mathematical background in Statistics, I've found ways to
+              apply development strategies to a variety of problem spaces and
+              take ownership in various projects and software development
+              processes.
             </Text>
             <Text textStyle="body-regular" marginBottom="30px">
               Outside of school and work, you can find me doodling in my bullet
@@ -144,13 +155,33 @@ const Home = (): React.ReactElement => {
               :)
             </Text>
           </Flex>
-          <Image
-            marginTop={{ base: "50px", lg: "0px" }}
-            marginLeft={{ base: "0px", lg: "50px" }}
-            boxSize="350px"
-            src={Self1}
-            alt="Jenny Vong"
-          />
+          <Carousel
+            width="280px"
+            autoPlay={true}
+            infiniteLoop={true}
+            showStatus={false}
+            showThumbs={false}
+            showArrows={false}
+          >
+            <div>
+              <Image src={Sister} />
+            </div>
+            <div>
+              <Image src={Udon} />
+            </div>
+            <div>
+              <Image src={Friends} />
+            </div>
+            <div>
+              <Image src={Bujo} />
+            </div>
+            <div>
+              <Image src={Mom} />
+            </div>
+            <div>
+              <Image src={Pottery} />
+            </div>
+          </Carousel>
         </Flex>
 
         <div id="experience">
@@ -178,40 +209,37 @@ const Home = (): React.ReactElement => {
             year="Jan 2023 - Apr 2023"
             company="Amazon Web Services"
             position="Software Development Engineer"
-            desc="Collaborated with 8 developers to build an optimized case man-
-              agement application for Children’s Aid Society using React and Flask"
+            desc="Managed data packet processing for internal AWS services as a
+            member of EC2 Networking Hyperplane team"
             link="https://aws.amazon.com/ec2/"
           />
           <JobTile
             year="May 2022 - Aug 2022"
             company="Kaleidescape"
             position="Software Engineer"
-            desc="Collaborated with 8 developers to build an optimized case man-
-              agement application for Children’s Aid Society using React and Flask"
+            desc="Launched CRUD movie collection management functionality for web store using Java, PostgreSQL, and PHP"
             link="https://www.kaleidescape.com/"
           />
           <JobTile
             year="Sep 2021 - Dec 2021"
             company="Cubic Health"
             position="Software Engineer"
-            desc="Collaborated with 8 developers to build an optimized case man-
-              agement application for Children’s Aid Society using React and Flask"
+            desc="Collaborated with 2 Full-Stack Developers to develop an application to view and edit 100 000+ drug product information using Angular"
             link="https://cubic.ca/"
           />
           <JobTile
             year="Jan 2021 - Aug 2021"
             company="Hack the 6ix"
             position="Fullstack Developer"
-            desc="Collaborated with 8 developers to build an optimized case man-
-              agement application for Children’s Aid Society using React and Flask"
+            desc="Collaborated with 3 Developer Executives to develop an informative
+            and user-friendly website for 1000+ hackers using Vue.js"
             link="https://hackthe6ix.com/"
           />
           <JobTile
             year="Jan 2021 - Apr 2021"
             company="Gore Mutual Insurance"
             position="Frontend Developer"
-            desc="Collaborated with 8 developers to build an optimized case man-
-              agement application for Children’s Aid Society using React and Flask"
+            desc="Collaborated with 3 developers to rebuild frontend components of newly main insurance broker web application using Angular"
             link="https://www.goremutual.ca/"
           />
         </Flex>
@@ -245,40 +273,37 @@ const Home = (): React.ReactElement => {
               year="Jan 2023 - Apr 2023"
               company="Amazon Web Services"
               position="Software Development Engineer"
-              desc="Collaborated with 8 developers to build an optimized case man-
-              agement application for Children’s Aid Society using React and Flask"
+              desc="Managed data packet processing for internal AWS services as a
+              member of EC2 Networking Hyperplane team"
               link="https://aws.amazon.com/ec2/"
             />
             <JobTile
               year="May 2022 - Aug 2022"
               company="Kaleidescape"
               position="Software Engineer"
-              desc="Collaborated with 8 developers to build an optimized case man-
-              agement application for Children’s Aid Society using React and Flask"
+              desc="Launched CRUD movie collection management functionality for web store using Java, PostgreSQL, and PHP"
               link="https://www.kaleidescape.com/"
             />
             <JobTile
               year="Sep 2021 - Dec 2021"
               company="Cubic Health"
               position="Software Engineer"
-              desc="Collaborated with 8 developers to build an optimized case man-
-              agement application for Children’s Aid Society using React and Flask"
+              desc="Collaborated with 2 Full-Stack Developers to develop an application to view and edit 100 000+ drug product information using Angular"
               link="https://cubic.ca/"
             />
             <JobTile
               year="Jan 2021 - Aug 2021"
               company="Hack the 6ix"
               position="Fullstack Developer"
-              desc="Collaborated with 8 developers to build an optimized case man-
-              agement application for Children’s Aid Society using React and Flask"
+              desc="Collaborated with 3 Developer Executives to develop an informative
+              and user-friendly website for 1000+ hackers using Vue.js"
               link="https://hackthe6ix.com/"
             />
             <JobTile
               year="Jan 2021 - Apr 2021"
               company="Gore Mutual Insurance"
               position="Frontend Developer"
-              desc="Collaborated with 8 developers to build an optimized case man-
-              agement application for Children’s Aid Society using React and Flask"
+              desc="Collaborated with 3 developers to rebuild frontend components of newly main insurance broker web application using Angular"
               link="https://www.goremutual.ca/"
             />
           </GridItem>

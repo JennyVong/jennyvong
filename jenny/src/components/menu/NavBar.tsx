@@ -50,7 +50,11 @@ const NavBar = ({
           </Text>
         </Button>
         <Button variant="nav">
-          <Link textStyle="title-small" href="#" isExternal>
+          <Link
+            textStyle="title-small"
+            href="https://drive.google.com/file/d/1QVMyhfaH1UW0FaUKYO_OXty96IaSylZb/view?usp=drive_link"
+            isExternal
+          >
             <Text _hover={{ color: "purple.400" }} textStyle="title-small">
               RESUME
             </Text>

@@ -49,6 +49,19 @@ const Footer = (): React.ReactElement => {
         >
           Github
         </Link>
+        <Text display="inline-block" textStyle="body-regular">
+          &nbsp; | &nbsp;
+        </Text>
+        <Link
+          cursor="pointer"
+          textStyle="body-bold"
+          color="purple.400"
+          display="inline-block"
+          href="#"
+          isExternal
+        >
+          Resume
+        </Link>
       </Text>
       <Text marginTop={{ base: "10px", lg: "30px" }} textStyle="body-regular">
         Created & designed by Jenny Vong

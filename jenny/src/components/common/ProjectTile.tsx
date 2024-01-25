@@ -29,7 +29,11 @@ const ProjectTile = ({
       marginBottom="130px"
       templateColumns={{ base: "1", lg: "repeat(2, 1fr)" }}
     >
-      <Image src={img} alt={altText} />
+      <Image
+        src={img}
+        alt={altText}
+        marginBottom={{ base: "20px", lg: "0px" }}
+      />
       <Flex marginLeft={{ base: "0px", lg: "60px" }} flexDirection="column">
         {link ? (
           <Link

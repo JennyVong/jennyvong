@@ -20,6 +20,12 @@ import Friends from "../../assets/friends.png";
 import Mom from "../../assets/mom.png";
 import Pottery from "../../assets/pottery.png";
 import Sister from "../../assets/sister.png";
+import AWS from "../../assets/aws.svg";
+import Blueprint from "../../assets/blueprint.svg";
+import Kaleidescape from "../../assets/kaleidescape.png";
+import Cubic from "../../assets/cubic.png";
+import Hack from "../../assets/hack.svg";
+import Gore from "../../assets/gore.svg";
 
 const Home = (): React.ReactElement => {
   const aboutRef = useRef<null | HTMLDivElement>(null);
@@ -189,7 +195,6 @@ const Home = (): React.ReactElement => {
         </div>
 
         <Flex
-          marginBottom="80px"
           alignSelf="center"
           display={{ lg: "none" }}
           flexDirection="column"
@@ -204,6 +209,7 @@ const Home = (): React.ReactElement => {
             desc="Collaborated with 8 developers to build an optimized case man-
               agement application for Children’s Aid Society using React and Flask"
             link="https://uwblueprint.org/"
+            img={Blueprint}
           />
           <JobTile
             year="Jan 2023 - Apr 2023"
@@ -212,6 +218,7 @@ const Home = (): React.ReactElement => {
             desc="Managed data packet processing for internal AWS services as a
             member of EC2 Networking Hyperplane team"
             link="https://aws.amazon.com/ec2/"
+            img={AWS}
           />
           <JobTile
             year="May 2022 - Aug 2022"
@@ -219,6 +226,7 @@ const Home = (): React.ReactElement => {
             position="Software Engineer"
             desc="Launched CRUD movie collection management functionality for web store using Java, PostgreSQL, and PHP"
             link="https://www.kaleidescape.com/"
+            img={Kaleidescape}
           />
           <JobTile
             year="Sep 2021 - Dec 2021"
@@ -226,6 +234,7 @@ const Home = (): React.ReactElement => {
             position="Software Engineer"
             desc="Collaborated with 2 Full-Stack Developers to develop an application to view and edit 100 000+ drug product information using Angular"
             link="https://cubic.ca/"
+            img={Cubic}
           />
           <JobTile
             year="Jan 2021 - Aug 2021"
@@ -234,20 +243,22 @@ const Home = (): React.ReactElement => {
             desc="Collaborated with 3 Developer Executives to develop an informative
             and user-friendly website for 1000+ hackers using Vue.js"
             link="https://hackthe6ix.com/"
+            img={Hack}
           />
           <JobTile
             year="Jan 2021 - Apr 2021"
-            company="Gore Mutual Insurance"
+            company="Gore Mutual"
             position="Frontend Developer"
             desc="Collaborated with 3 developers to rebuild frontend components of newly main insurance broker web application using Angular"
             link="https://www.goremutual.ca/"
+            img={Gore}
           />
         </Flex>
 
         <Grid
           display={{ base: "none", lg: "grid" }}
           marginTop="100px"
-          templateColumns={{ md: "repeat(3, 1fr)" }}
+          templateColumns={{ md: "repeat(4, 1fr)" }}
           gap={6}
         >
           <GridItem
@@ -260,7 +271,7 @@ const Home = (): React.ReactElement => {
           >
             Professional Experience
           </GridItem>
-          <GridItem area={"Flex"} colSpan={2} flexDirection="column">
+          <GridItem area={"Flex"} colSpan={3} flexDirection="column">
             <JobTile
               year="May 2023 - Present"
               company="UW Blueprint"
@@ -268,14 +279,16 @@ const Home = (): React.ReactElement => {
               desc="Collaborated with 8 developers to build an optimized case man-
               agement application for Children’s Aid Society using React and Flask"
               link="https://uwblueprint.org/"
+              img={Blueprint}
             />
             <JobTile
               year="Jan 2023 - Apr 2023"
               company="Amazon Web Services"
-              position="Software Development Engineer"
+              position="Software Engineer"
               desc="Managed data packet processing for internal AWS services as a
-              member of EC2 Networking Hyperplane team"
+            member of EC2 Networking Hyperplane team"
               link="https://aws.amazon.com/ec2/"
+              img={AWS}
             />
             <JobTile
               year="May 2022 - Aug 2022"
@@ -283,6 +296,7 @@ const Home = (): React.ReactElement => {
               position="Software Engineer"
               desc="Launched CRUD movie collection management functionality for web store using Java, PostgreSQL, and PHP"
               link="https://www.kaleidescape.com/"
+              img={Kaleidescape}
             />
             <JobTile
               year="Sep 2021 - Dec 2021"
@@ -290,21 +304,24 @@ const Home = (): React.ReactElement => {
               position="Software Engineer"
               desc="Collaborated with 2 Full-Stack Developers to develop an application to view and edit 100 000+ drug product information using Angular"
               link="https://cubic.ca/"
+              img={Cubic}
             />
             <JobTile
               year="Jan 2021 - Aug 2021"
               company="Hack the 6ix"
               position="Fullstack Developer"
               desc="Collaborated with 3 Developer Executives to develop an informative
-              and user-friendly website for 1000+ hackers using Vue.js"
+            and user-friendly website for 1000+ hackers using Vue.js"
               link="https://hackthe6ix.com/"
+              img={Hack}
             />
             <JobTile
               year="Jan 2021 - Apr 2021"
-              company="Gore Mutual Insurance"
+              company="Gore Mutual"
               position="Frontend Developer"
               desc="Collaborated with 3 developers to rebuild frontend components of newly main insurance broker web application using Angular"
               link="https://www.goremutual.ca/"
+              img={Gore}
             />
           </GridItem>
         </Grid>

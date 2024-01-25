@@ -344,7 +344,7 @@ const Home = (): React.ReactElement => {
             type="Personal Project"
             desc="Fusion of Instagram and Pinterest web app to display NASA Rover photos through NASA API"
             techs="Angular (Typescript)"
-            link="jennyvong.github.io/spacestagram/"
+            link="https://jennyvong.github.io/spacestagram/"
             glink="https://github.com/JennyVong/spacestagram"
             img={Spacestagram}
             altText="spacestagram"
@@ -392,7 +392,7 @@ const Home = (): React.ReactElement => {
               type="Personal Project"
               desc="Fusion of Instagram and Pinterest web app to display NASA Rover photos through NASA API"
               techs="Angular (Typescript)"
-              link="jennyvong.github.io/spacestagram/"
+              link="https://jennyvong.github.io/spacestagram/"
               glink="https://github.com/JennyVong/spacestagram"
               img={Spacestagram}
               altText="spacestagram"

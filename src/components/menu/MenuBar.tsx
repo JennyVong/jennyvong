@@ -82,7 +82,7 @@ const MenuBar = ({
               <Button variant="nav">
                 <Link
                   textStyle="title-small"
-                  href="https://drive.google.com/file/d/1QVMyhfaH1UW0FaUKYO_OXty96IaSylZb/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1wt5Sxy04W1mrS_PtDus62Ql7LdW6SEXP/view?usp=sharinghttps://drive.google.com/file/d/1wt5Sxy04W1mrS_PtDus62Ql7LdW6SEXP/view?usp=sharing"
                   isExternal
                 >
                   <Text

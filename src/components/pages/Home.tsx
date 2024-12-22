@@ -90,8 +90,7 @@ const Home = (): React.ReactElement => {
           <Flex alignSelf="center" flexDirection="column">
             <Text textStyle="title-large">Hi, I'm Jenny!</Text>
             <Text marginBottom="15px" textStyle="title-small">
-              ...student @ University of Waterloo, SDE @ AWS, FullStack @ UW
-              Blueprint
+              ...student @ University of Waterloo, prev @ AWS
             </Text>
             <Text
               display="inline-block"
@@ -99,18 +98,7 @@ const Home = (): React.ReactElement => {
               textStyle="body-regular"
             >
               I’m a software engineer passionate about breaking down boundaries
-              and making technology more accessible. Currently supporting EC2
-              systems @{" "}
-              <Link
-                cursor="pointer"
-                display="inline-block"
-                textStyle="body-bold"
-                color="purple.400"
-                href="https://aws.amazon.com/ec2/"
-                isExternal
-              >
-                AWS
-              </Link>
+              and making technology more accessible.
             </Text>
           </Flex>
         </Flex>
@@ -203,7 +191,16 @@ const Home = (): React.ReactElement => {
             Professional Experience
           </Text>
           <JobTile
-            year="May 2023 - Present"
+            year="Feb 2024 - Apr 2024"
+            company="Amazon Web Services"
+            position="Software Development Engineer"
+            desc="Managed data packet processing for internal AWS services as a
+            member of EC2 Networking Hyperplane team"
+            link="https://aws.amazon.com/ec2/"
+            img={AWS}
+          />
+          <JobTile
+            year="May 2023 - Apr 2024"
             company="UW Blueprint"
             position="Fullstack Developer"
             desc="Collaborated with 8 developers to build an optimized case man-
@@ -273,7 +270,16 @@ const Home = (): React.ReactElement => {
           </GridItem>
           <GridItem area={"Flex"} colSpan={3} flexDirection="column">
             <JobTile
-              year="May 2023 - Present"
+              year="Feb 2024 - Apr 2024"
+              company="Amazon Web Services"
+              position="Software Engineer"
+              desc="Managed data packet processing for internal AWS services as a
+            member of EC2 Networking Hyperplane team"
+              link="https://aws.amazon.com/ec2/"
+              img={AWS}
+            />
+            <JobTile
+              year="May 2023 - Apr 2024"
               company="UW Blueprint"
               position="Fullstack Developer"
               desc="Collaborated with 8 developers to build an optimized case man-

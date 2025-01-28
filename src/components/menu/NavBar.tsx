@@ -52,7 +52,7 @@ const NavBar = ({
         <Button variant="nav">
           <Link
             textStyle="title-small"
-            href="https://drive.google.com/file/d/1wt5Sxy04W1mrS_PtDus62Ql7LdW6SEXP/view?usp=sharing"
+            href="https://drive.google.com/file/d/1UFtT9oNuYKB2HwCJw-tYHYLbpdI-2AbR/view?usp=sharinghttps://drive.google.com/file/d/1UFtT9oNuYKB2HwCJw-tYHYLbpdI-2AbR/view?usp=sharing"
             isExternal
           >
             <Text _hover={{ color: "purple.400" }} textStyle="title-small">

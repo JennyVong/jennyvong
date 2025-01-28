@@ -98,7 +98,18 @@ const Home = (): React.ReactElement => {
               textStyle="body-regular"
             >
               I’m a software engineer passionate about breaking down boundaries
-              and making technology more accessible.
+              and making technology more accessible. Currently streamlining
+              clinical trial operations @{" "}
+              <Link
+                cursor="pointer"
+                display="inline-block"
+                textStyle="body-bold"
+                color="purple.400"
+                href="https://vial.com"
+                isExternal
+              >
+                Vial
+              </Link>
             </Text>
           </Flex>
         </Flex>
